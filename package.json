@@ -1,22 +1,26 @@
+
 {
-  "name": "edusphere-lms",
-  "version": "2.0.0",
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "server": "node --env-file=.env server.js",
-    "build": "vite build"
-  },
-  "dependencies": {
-    "express": "^5.1.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
-  },
-  "devDependencies": {
-    "vite": "^6.0.0"
-  },
-  "allowScripts": {
-    "esbuild@0.25.12": true
-  }
+    "name": "edusphere-lms",
+    "version": "3.0.0",
+    "private": true,
+    "description": "EduSphere Full Stack Learning Management System",
+    "type": "module",
+    "engines": {
+        "node": "24.x"
+    },
+    "scripts": {
+        "dev": "vite",
+        "server": "node --env-file=.env server.js",
+        "build": "vite build",
+        "start": "node server.js",
+        "preview": "vite preview"
+    },
+    "dependencies": {
+        "express": "^5.1.0",
+        "react": "^19.0.0",
+        "react-dom": "^19.0.0"
+    },
+    "devDependencies": {
+        "vite": "^6.0.0"
+    }
 }
