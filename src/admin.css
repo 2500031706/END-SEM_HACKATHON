@@ -1,0 +1,586 @@
+
+/* =========================================
+   EDUSPHERE ADMIN DASHBOARD
+========================================= */
+
+/* ADMIN THEME */
+
+.admin-shell {
+    --admin-primary: #4f46e5;
+    --admin-secondary: #7c3aed;
+
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+}
+
+/* ADMIN SIDEBAR */
+
+.admin-shell .sidebar {
+    background: linear-gradient(
+        180deg,
+        #0f172a,
+        #312e81
+    );
+}
+
+.admin-shell .sidebar .brand {
+    font-size: 27px;
+    font-weight: 800;
+}
+
+.admin-shell .sidebar nav button {
+    margin-bottom: 4px;
+    border-radius: 12px;
+}
+
+.admin-shell .sidebar nav button.active {
+    background: linear-gradient(
+        135deg,
+        #6366f1,
+        #8b5cf6
+    );
+
+    color: white;
+
+    box-shadow: 0 5px 20px #6366f140;
+}
+
+/* ADMIN HEADER */
+
+.admin-shell header {
+    background: var(--surface);
+    color: var(--text);
+    border-bottom: 1px solid var(--line);
+}
+
+/* ADMIN WELCOME BANNER */
+
+.admin-hero {
+    position: relative;
+    overflow: hidden;
+
+    background: linear-gradient(
+        120deg,
+        #312e81,
+        #4f46e5,
+        #9333ea
+    );
+
+    border-radius: 22px;
+    padding: 35px;
+    color: white;
+}
+
+.admin-hero h2 {
+    font-size: 32px;
+    color: white;
+}
+
+.admin-hero p {
+    color: #e0e7ff;
+}
+
+.admin-hero .eyebrow {
+    color: #c7d2fe;
+}
+
+.admin-hero button {
+    background: white;
+    color: #4338ca;
+}
+
+/* DASHBOARD STATISTICS GRID */
+
+.admin-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 18px;
+    margin: 25px 0;
+}
+
+/* STATISTICS CARDS */
+
+.admin-stat {
+    background: var(--surface);
+    color: var(--text);
+
+    border: 1px solid var(--line);
+    border-left: 5px solid #6366f1;
+
+    border-radius: 18px;
+    padding: 24px;
+
+    box-shadow: var(--shadow);
+
+    animation: adminFadeIn 0.5s ease;
+
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.admin-stat:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 12px 30px #6366f120;
+}
+
+.admin-stat small {
+    display: block;
+
+    margin-top: 12px;
+
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.admin-stat h2 {
+    font-size: 34px;
+    font-weight: 800;
+
+    margin: 10px 0 0;
+
+    color: var(--text);
+}
+
+/* STATISTICS ICONS */
+
+.admin-stat-icon {
+    width: 48px;
+    height: 48px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 13px;
+
+    color: white;
+    font-size: 24px;
+
+    box-shadow:
+        0 5px 15px #00000015;
+}
+
+/* QUICK MANAGEMENT ACTIONS */
+
+.admin-actions {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 20px;
+
+    margin-bottom: 20px;
+}
+
+.admin-actions .panel {
+    margin: 0;
+
+    border-top: 4px solid #6366f1;
+}
+
+.admin-actions .panel:nth-child(2) {
+    border-top-color: #10b981;
+}
+
+.admin-actions button {
+    margin-top: 10px;
+}
+
+/* USER MANAGEMENT TOOLBAR */
+
+.admin-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    flex-wrap: wrap;
+
+    gap: 20px;
+}
+
+.admin-toolbar h2 {
+    margin-bottom: 5px;
+}
+
+/* SEARCH AND FILTERS */
+
+.admin-filters {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+}
+
+.admin-filters input {
+    width: 260px;
+
+    background: var(--input);
+    color: var(--text);
+
+    border: 1px solid var(--line);
+
+    padding: 12px 15px;
+    border-radius: 10px;
+}
+
+.admin-filters select {
+    width: 140px;
+
+    background: var(--input);
+    color: var(--text);
+
+    border: 1px solid var(--line);
+
+    padding: 12px;
+    border-radius: 10px;
+}
+
+.admin-filters input:focus,
+.admin-filters select:focus {
+    border-color: #818cf8;
+
+    box-shadow:
+        0 0 0 3px #6366f125;
+}
+
+/* USER TABLE */
+
+.admin-shell .tablewrap {
+    overflow-x: auto;
+}
+
+.admin-shell table {
+    width: 100%;
+    border-collapse: collapse;
+
+    color: var(--text);
+}
+
+.admin-shell th {
+    background: var(--soft);
+    color: var(--accent);
+
+    text-align: left;
+
+    padding: 16px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.admin-shell td {
+    padding: 16px;
+
+    border-bottom:
+        1px solid var(--line);
+
+    font-size: 14px;
+}
+
+.admin-shell tbody tr:hover {
+    background: var(--hover);
+}
+
+/* USER AVATARS */
+
+.admin-user {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    min-width: 150px;
+}
+
+.admin-user .avatar {
+    width: 38px;
+    height: 38px;
+
+    background: linear-gradient(
+        135deg,
+        #6366f1,
+        #9333ea
+    );
+
+    color: white;
+}
+
+/* USER ROLE LABELS */
+
+.admin-role {
+    display: inline-block;
+
+    padding: 6px 12px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.admin-role.student {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.admin-role.faculty {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+.admin-role.admin {
+    background: #f3e8ff;
+    color: #7e22ce;
+}
+
+/* FACULTY CREATION FORM */
+
+.admin-shell .fields {
+    display: grid;
+    gap: 18px;
+}
+
+.admin-shell .fields input {
+    background: var(--input);
+    color: var(--text);
+
+    border: 1px solid var(--line);
+    border-radius: 10px;
+
+    padding: 13px;
+}
+
+.admin-shell .fields label {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.admin-shell .fields button {
+    background: linear-gradient(
+        135deg,
+        #4f46e5,
+        #7c3aed
+    );
+
+    color: white;
+
+    padding: 13px 22px;
+}
+
+/* REPORTS */
+
+.admin-report {
+    padding: 15px 0;
+}
+
+.admin-report-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 8px;
+
+    color: var(--text);
+}
+
+.admin-report .progress {
+    height: 13px;
+    background: var(--line);
+}
+
+.admin-report .progress div {
+    background: linear-gradient(
+        90deg,
+        #6366f1,
+        #8b5cf6
+    );
+}
+
+/* ADMIN PROFILE */
+
+.admin-shell .profile-avatar {
+    width: 95px;
+    height: 95px;
+
+    font-size: 40px;
+
+    background: linear-gradient(
+        135deg,
+        #4f46e5,
+        #9333ea
+    );
+
+    box-shadow:
+        0 8px 25px #6366f130;
+}
+
+/* =========================================
+   ADMIN DARK MODE
+========================================= */
+
+html[data-theme="dark"] .admin-shell {
+    background: #0f172a;
+    color: #f8fafc;
+}
+
+html[data-theme="dark"] .admin-shell .sidebar {
+    background: linear-gradient(
+        180deg,
+        #020617,
+        #1e1b4b
+    );
+}
+
+html[data-theme="dark"] .admin-stat,
+html[data-theme="dark"] .admin-shell .panel,
+html[data-theme="dark"] .admin-shell header {
+    background: #1e293b;
+    color: #f8fafc;
+}
+
+html[data-theme="dark"] .admin-stat h2 {
+    color: #f8fafc;
+}
+
+html[data-theme="dark"] .admin-stat small {
+    color: #94a3b8;
+}
+
+html[data-theme="dark"] .admin-role.student {
+    background: #14532d;
+    color: #bbf7d0;
+}
+
+html[data-theme="dark"] .admin-role.faculty {
+    background: #1e3a8a;
+    color: #bfdbfe;
+}
+
+html[data-theme="dark"] .admin-role.admin {
+    background: #581c87;
+    color: #e9d5ff;
+}
+
+html[data-theme="dark"] .admin-shell th {
+    background: #312e81;
+    color: #e0e7ff;
+}
+
+html[data-theme="dark"] .admin-shell td {
+    border-color: #334155;
+}
+
+html[data-theme="dark"] .admin-shell tbody tr:hover {
+    background: #334155;
+}
+
+html[data-theme="dark"] .admin-hero {
+    background: linear-gradient(
+        135deg,
+        #312e81,
+        #4338ca,
+        #6d28d9
+    );
+}
+
+/* ANIMATION */
+
+@keyframes adminFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .admin-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+@media (max-width: 720px) {
+
+    .admin-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 10px;
+    }
+
+    .admin-stat {
+        padding: 16px;
+    }
+
+    .admin-stat h2 {
+        font-size: 27px;
+    }
+
+    .admin-stat small {
+        font-size: 12px;
+    }
+
+    .admin-actions {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-hero {
+        padding: 24px;
+    }
+
+    .admin-hero h2 {
+        font-size: 24px;
+    }
+
+    .admin-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .admin-filters {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .admin-filters input,
+    .admin-filters select {
+        width: 100%;
+    }
+
+    .admin-shell th,
+    .admin-shell td {
+        padding: 12px;
+        font-size: 12px;
+    }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .admin-shell *,
+    .admin-shell *::before,
+    .admin-shell *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+
+}
